@@ -32,8 +32,6 @@ INT_PTR CTreeSeedDlg::DoModal()
     return ret;
 }
 
-
-
 /** \cond */
 IMPLEMENT_DYNAMIC(CTreeSeedActualDlg, CDialog)
 
@@ -59,7 +57,6 @@ void CTreeSeedActualDlg::DoDataExchange(CDataExchange* pDX)
     DDX_Text(pDX, IDC_EDITSEED, mSeed);
 }
 
-
 BEGIN_MESSAGE_MAP(CTreeSeedActualDlg, CDialog)
     ON_BN_CLICKED(IDC_BUTTONRANDOM, &CTreeSeedActualDlg::OnBnClickedButtonrandom)
     ON_WM_CTLCOLOR()
@@ -79,9 +76,6 @@ void CTreeSeedActualDlg::OnBnClickedButtonrandom()
     mSeed = rand();
     UpdateData(false);
 }
-
-
-
 
 BOOL CTreeSeedActualDlg::OnInitDialog()
 {

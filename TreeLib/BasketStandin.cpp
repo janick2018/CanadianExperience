@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "BasketStandin.h"
+#include "RotatedBitmap.h"
 
 using namespace Gdiplus;
 using namespace std;
@@ -12,6 +13,15 @@ using namespace std;
 */
 void CBasketStandin::DrawBasket(Gdiplus::Graphics *graphics)
 {
+
+
+	CRotatedBitmap basket;
+	basket.LoadImageW(L"images/basket.png");
+	basket.SetCenter(Point(60, 60));
+	basket.DrawImage(graphics, Point(mX, mY-100), 0);
+
+
+	
     const int LineSize = 16;
     const int LineSpacing = 25;
 
@@ -21,8 +31,15 @@ void CBasketStandin::DrawBasket(Gdiplus::Graphics *graphics)
 
     if (mAdded) 
     {
-        CenteredString(graphics, L"Fruit added.", mX, y, LineSize);
-        y -= LineSpacing;
+		CRotatedBitmap fruit;
+		fruit.LoadImageW(L"images/orange.png");
+		fruit.SetCenter(Point(50, 56));
+		fruit.DrawImage(graphics, Point(mX, mY - 200), 3.14);
+
+
+
+        //CenteredString(graphics, L"Fruit added.", mX, y, LineSize);
+        //y -= LineSpacing;
     }
 }
 

@@ -48,7 +48,6 @@ public:
 
 private:
     BOOL RegisterWindowClass();
-
     std::shared_ptr<CTree> mTree;       ///< Tree we are displaying
     std::shared_ptr<CBasket> mBasket;   ///< Basket
 };

@@ -10,6 +10,7 @@
 #include "TreeStandin.h"
 #include <sstream>
 
+
 using namespace Gdiplus;
 using namespace std;
 
@@ -29,6 +30,7 @@ CTreeStandin::~CTreeStandin()
 }
 
 
+
 /**
 * Draw the tree at the currently specified location
 * \param graphics GDI+ Graphics object
@@ -39,12 +41,40 @@ void CTreeStandin::DrawTree(Gdiplus::Graphics *graphics)
     const int LineSpacing = 25;
 
     Pen pen(Color(139, 69, 19), (REAL)3);
-    pen.SetEndCap(LineCapRound);
-    graphics->DrawLine(&pen, (REAL)mX, (REAL)mY, (REAL)(mX), (REAL)(mY - 100));
+   // pen.SetEndCap(LineCapRound);
 
-    Pen pen2(Color(139, 69, 19), (REAL)2);
-    graphics->DrawLine(&pen, (REAL)(mX), (REAL)(mY - 100), (REAL)(mX + 40), (REAL)(mY - 140));
-    graphics->DrawLine(&pen, (REAL)(mX), (REAL)(mY - 100), (REAL)(mX - 50), (REAL)(mY - 140));
+	// ervery node need three point
+	
+	Gdiplus::PointF rootPoint;
+	Gdiplus::PointF nodePoint;
+	Gdiplus::PointF leftPoint;
+	Gdiplus::PointF rightPoint;
+
+
+
+
+	/*for (int i = 0; i < 4; i++) {
+
+		
+		rootPoint = Gdiplus::PointF((REAL)mX, (REAL)mY);
+		nodePoint = Gdiplus::PointF((REAL)mX, (REAL)mY-100);
+		leftPoint = Gdiplus::PointF((REAL)mX-40, (REAL)mY - 140);
+		rightPoint = Gdiplus::PointF((REAL)mX+40, (REAL)mY - 140);
+
+		graphics->DrawLine(&pen, rootPoint, nodePoint);
+		graphics->DrawLine(&pen, nodePoint, leftPoint);
+		graphics->DrawLine(&pen, nodePoint, rightPoint);
+
+	}*/
+
+
+ //   graphics->DrawLine(&pen, (REAL)mX, (REAL)mY, (REAL)(mX), (REAL)(mY - 100));
+ //   //Pen pen2(Color(139, 69, 19), (REAL)2);
+ //   graphics->DrawLine(&pen, (REAL)(mX), (REAL)(mY - 100), (REAL)(mX + 40), (REAL)(mY - 140));
+ //   graphics->DrawLine(&pen, (REAL)(mX), (REAL)(mY - 100), (REAL)(mX - 50), (REAL)(mY - 140));
+	//graphics->DrawLine(&Pen,)
+
+
 
     int y = mY - LineSize;
     CenteredString(graphics, L"Tree go here!", mX, y, LineSize);

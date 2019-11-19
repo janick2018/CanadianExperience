@@ -41,8 +41,8 @@ public:
     afx_msg void OnBnClickedButtonnewtree();
 
 private:
-    int mFrameNum = 0;      ///< Frame number, assumed 30 frames per second
-    double mWindSpeed = 0;  ///< Wind speed in mile per hour
+    int mFrameNum = 0;			///< Frame number, assumed 30 frames per second
+    double mWindSpeed = 0;		///< Wind speed in mile per hour
 
     void UpdateUI();
     CSliderCtrl mTimeSlider;    ///< The time/frame slider

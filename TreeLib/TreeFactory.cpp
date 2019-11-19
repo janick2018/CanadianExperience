@@ -45,6 +45,11 @@ std::shared_ptr<CTree> CTreeFactory::CreateTree()
  */
 std::shared_ptr<CBasket> CTreeFactory::CreateBasket()
 {
+	shared_ptr<CBasket>basket = make_shared<CBasket>();
+	
+
+
+
     return make_shared<CBasket>();
 }
 

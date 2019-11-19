@@ -14,6 +14,7 @@
 #include "Tree.h"
 #include "TreeStandin.h"
 
+
 using namespace Gdiplus;
 using namespace std;
 
@@ -21,6 +22,7 @@ using namespace std;
 CTree::CTree() 
 {
     mStandin = make_shared<CTreeStandin>();
+	
 }
 
 void CTree::SetRootLocation(int x, int y)
@@ -30,6 +32,10 @@ void CTree::SetRootLocation(int x, int y)
 
 void CTree::DrawTree(Gdiplus::Graphics *graphics)
 {
+
+
+
+
     mStandin->DrawTree(graphics);
 }
 
